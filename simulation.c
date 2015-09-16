@@ -18,14 +18,14 @@ int simulation(double velocity) {
 	srand(time(NULL));
 
 	/*初期座標決定*/
-	coordinate_x = rand() / MAX_COORDINATE;
-	coordinate_y = rand() / MAX_COORDINATE;
-	coordinate_z = rand() / MAX_COORDINATE;
+	coordinate_x = rand() % MAX_COORDINATE;
+	coordinate_y = rand() % MAX_COORDINATE;
+	coordinate_z = rand() % MAX_COORDINATE;
 	
 	/*ランダムな角度のラジアンを渡した。*/
-	velocity_x = velocity * cos((rand() % 360 + 1) * ((double)M_PI) / 180.0);
-	velocity_y = velocity * cos((rand() % 360 + 1) * ((double)M_PI) / 180.0);
-	velocity_z = velocity * cos((rand() % 360 + 1) * ((double)M_PI) / 180.0);
+	velocity_x = velocity * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
+	velocity_y = velocity * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
+	velocity_z = velocity * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
 
 	for(;;) {
 		
