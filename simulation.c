@@ -3,15 +3,15 @@
 #include <time.h>
 #include <math.h>
 
-#define MAX_COORDINATE 22.4
+#define MAX_COORDINATE 22
 
-int simulation(double velocity) {
+double simulation(double *velocity_simulation) {
 	
 	/*xyz軸は配列にした方が良かった？*/
 	double coordinate_x, coordinate_y, coordinate_z; // 座標
 	double velocity_x, velocity_y, velocity_z; // 速度
 	double force_x = 0, force_y = 0, force_z = 0; // 力
-	int ifout_x, ifout_y, ifout_z;
+	int ifout_x = 0, ifout_y = 0, ifout_z = 0;
 	double massofgas = 1;
 	 
 
@@ -23,9 +23,9 @@ int simulation(double velocity) {
 	coordinate_z = rand() % MAX_COORDINATE;
 	
 	/*ランダムな角度のラジアンを渡した。*/
-	velocity_x = velocity * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
-	velocity_y = velocity * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
-	velocity_z = velocity * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
+	velocity_x = *velocity_simulation * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
+	velocity_y = *velocity_simulation * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
+	velocity_z = *velocity_simulation * cos(((rand() % 360 + 1) * ((double)M_PI)) / 180.0);
 
 	for(;;) {
 		

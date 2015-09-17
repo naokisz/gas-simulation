@@ -3,13 +3,13 @@
 
 int main(void) {
 
-	double velocity; // 速度
+	double velocity_main; // 速度
 
 	printf("気体シュミレーション\n");
 	printf("気体の速度を入力してください。＞");
-	scanf("%lf", &velocity);
+	scanf("%lf", &velocity_main);
 
-	simulation(velocity);
+	simulation(&velocity_main);
 
 	return 0;
 }
