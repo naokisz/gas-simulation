@@ -34,6 +34,8 @@ double simulation(double *velocity_simulation) {
 		coordinate_z += velocity_z;
 
 		/*はみ出し判定*/
+        //XXX ifout死んでる。
+
 		for(;;) {
 
 			if(coordinate_x > MAX_COORDINATE || coordinate_x < 0) {
@@ -65,4 +67,3 @@ double simulation(double *velocity_simulation) {
 
 	return 0;
 }
-
